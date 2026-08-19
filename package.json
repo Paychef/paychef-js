@@ -1,0 +1,42 @@
+{
+  "name": "paychef",
+  "version": "1.0.0",
+  "description": "PayChef SDK for JavaScript/TypeScript - client library for the PayChef payment API",
+  "keywords": [
+    "paychef",
+    "payment",
+    "gateway",
+    "paylink",
+    "sdk",
+    "typescript"
+  ],
+  "license": "MIT",
+  "author": "PayChef",
+  "homepage": "https://www.paychef.com",
+  "type": "module",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/esm/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/esm/index.d.ts",
+      "import": "./dist/esm/index.js",
+      "require": "./dist/cjs/index.js"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.cjs.json && node scripts/build-cjs.mjs",
+    "test": "node --test \"test/**/*.test.mjs\""
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0"
+  }
+}
